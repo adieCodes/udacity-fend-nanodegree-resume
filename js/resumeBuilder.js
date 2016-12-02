@@ -51,6 +51,12 @@ var projects = {
       "dates": "November 2016",
       "description": "Responsive portfolio project using Flexbox",
       "image": "images/logoLine.svg"
+    },
+    {
+      "title": "TEST",
+      "dates": "November 2016",
+      "description": "Responsive portfolio project using Flexbox",
+      "image": "images/logoLine.svg"
     }
   ]
 }
@@ -136,3 +142,16 @@ function inName(name){
   return internationalName;
 }
 inName("sebastian thrun");
+
+projects.display = function(){
+  projects.project.forEach(function(proj){
+    $("#projects").append(HTMLprojectStart);
+    var formattedProjectTitle = HTMLprojectTitle.replace("%data%", proj.title);
+    var formattedProjectDates = HTMLprojectDates.replace("%data%", proj.dates);
+    var formattedProjectDescription = HTMLprojectDescription.replace("%data%",proj.description);
+    var formattedProjectImage = HTMLprojectImage.replace("%data%", proj.image);
+
+    $(".project-entry:last").append(formattedProjectTitle, formattedProjectDates, formattedProjectDescription, formattedProjectImage);
+  })
+}
+projects.display()
