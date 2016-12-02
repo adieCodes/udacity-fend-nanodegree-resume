@@ -84,7 +84,7 @@ var education = {
       "name": "Front-End Web Developer Nanodegree",
       "school": "Udacity",
       "dates": 2016,
-      "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001?v=fe1";
+      "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001?v=fe1"
     },
     {
       "name": "Front End Developer Certification",
@@ -94,3 +94,34 @@ var education = {
     }
   ]
 }
+
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+
+$("#header").append(formattedName);
+
+if(bio.skills.length > 0){
+  $("#header").append(HTMLskillsStart);
+
+  var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+  $("#skills").append(formattedSkill);
+  formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+  $("#skills").append(formattedSkill);
+  formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+  $("#skills").append(formattedSkill);
+}
+
+function displayWork(){
+  for(role in work.roles){
+    if(work.roles.hasOwnProperty(role)){
+      $("#workExperience").append(HTMLworkStart);
+      var formattedEmployer = HTMLworkEmployer.replace("%data%", work.roles[role].employer);
+      var formattedEmployerTitle = HTMLworkTitle.replace("%data%", work.roles[role].title);
+      var formattedEmployerTitle = formattedEmployer + formattedEmployerTitle;
+      var formattedEmployerDates = HTMLworkDates.replace("%data%", work.roles[role].dates)
+      var formattedEmployerLocation = HTMLworkLocation.replace("%data%", work.roles[role].location);
+      var formattedEmployerDescription = HTMLworkDescription.replace("%data%", work.roles[role].description)
+      $(".work-entry:last").append(formattedEmployerTitle, formattedEmployerDates, formattedEmployerLocation, formattedEmployerDescription);
+    }
+  }
+}
+displayWork();
