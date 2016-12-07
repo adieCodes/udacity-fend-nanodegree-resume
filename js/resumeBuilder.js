@@ -1,21 +1,20 @@
 var bio = {
   "name": "Adie Williams",
   "role": "Front-End Web Developer",
-  "contactInfo": {
-    "mobile": 07525655736,
+  "contacts": {
+    "mobile": "07525655736",
     "email": "hello@adie.codes",
-    "twitter": "@adie.codes",
     "github": "adieCodes",
-    "blog": "http://www.adie.codes",
+    "twitter": "@adie.codes",
     "location": "Sheffield, UK"
   },
-  "pictureURL": "images/fry.jpg",
-  "welcome": "Front-End Web Developer who uses HTML, CSS" +
-    "and JavaScript to build mobile-first responsive sites." +
+  "welcomeMessage": "Front-End Web Developer who uses HTML, CSS" +
+    " and JavaScript to build mobile-first responsive sites." +
     " I enjoy working with people to gain a clear understanding" +
-    " of their business, requirements and users; and then use " +
+    " of their business, requirements and users; and then use" +
     " this knowledge to create a focused and enjoyable experience.",
   "skills": ["HTML", "CSS", "JavaScript"]
+  "biopic": "images/fry.jpg",
 };
 
 var work = {
@@ -64,39 +63,152 @@ var projects = {
 var education = {
   "schools": [
     {
-      "name": "Bournemouth Uni",
-      "city": "Bournemouth, UK",
-      "course": "HND in Tourism and Leisure Management",
-      "graduated": 2003,
+      "name": "Bournemouth University",
+      "location": "Bournemouth, UK",
+      "degree": "HND in Tourism and Leisure Management",
+      "majors": ["n/a", "n/a"],
+      "dates": "2001-2003",
       "url": "https://www1.bournemouth.ac.uk/"
     },
-    {
-      "name": "Oakmead Sixth Form",
-      "city": "Bournemouth, UK",
-      "course": "A level Physical Education",
-      "graduated": 2001,
-      "url": "https://oak.leaf.bournemouth.sch.uk/index.php/sixth-form"
-    },
-    {
-      "name": "Oakmead College of Technology",
-      "city": "Bournemouth, UK",
-      "course": ["English", "Mathematics", "Science"],
-      "graduated": 1999,
-      "url": "https://oak.leaf.bournemouth.sch.uk/"
-    }
   ],
   "onlineCourses": [
     {
-      "name": "Front-End Web Developer Nanodegree",
+      "title": "Front-End Web Developer Nanodegree",
       "school": "Udacity",
-      "dates": 2016,
+      "dates": "Sep 2016-present",
       "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001?v=fe1"
     },
     {
       "name": "Front End Developer Certification",
       "school": "Free Code Camp",
-      "dates": 2016,
+      "dates": "June 2015-present",
       "url": "https://www.freecodecamp.com/adieCodes"
+    },
+    {
+      "name": "WordPress Theme Development",
+      "school": "Team Treehouse",
+      "dates": "Nov 2014",
+      "url": "https://teamtreehouse.com/library/wordpress-theme-development"
+    },
+    {
+      "name": "The WordPress Codes",
+      "school": "Team Treehouse",
+      "dates": "Nov 2014",
+      "url": "https://teamtreehouse.com/library/the-wordpress-codex"
+    },
+    {
+      "name": "How to Build a WordPress Theme",
+      "school": "Team Treehouse",
+      "dates": "Aug 2014",
+      "url": "https://teamtreehouse.com/library/how-to-make-a-website-with-wordpress"
+    },
+    {
+      "name": "Local WordPress Development",
+      "school": "Team Treehouse",
+      "dates": "Aug 2014",
+      "url": "https://teamtreehouse.com/library/local-wordpress-development"
+    },
+    {
+      "name": "How to Make a Website with WordPress",
+      "school": "Team Treehouse",
+      "dates": "Aug 2014",
+      "url": "https://teamtreehouse.com/library/how-to-make-a-website-with-wordpress"
+    },
+    {
+      "name": "Sass Basics",
+      "school": "Team Treehouse",
+      "dates": "July 2014",
+      "url": "https://teamtreehouse.com/library/sass-basics"
+    },
+    {
+      "name": "Git Basics",
+      "school": "Team Treehouse",
+      "dates": "July 2014",
+      "url": "https://teamtreehouse.com/library/git-basics"
+    },
+    {
+      "name": "Console Foundations",
+      "school": "Team Treehouse",
+      "dates": "July 2014",
+      "url": "https://teamtreehouse.com/library/console-foundations"
+    },
+    {
+      "name": "Website Optimization",
+      "school": "Team Treehouse",
+      "dates": "July 2014",
+      "url": "https://teamtreehouse.com/library/website-optimization"
+    },
+    {
+      "name": "Accessibility",
+      "school": "Team Treehouse",
+      "dates": "July 2014",
+      "url": "https://teamtreehouse.com/library/accessibility"
+    },
+    {
+      "name": "AJAX Basics",
+      "school": "Team Treehouse",
+      "dates": "July 2014",
+      "url": "https://teamtreehouse.com/library/ajax-basics"
+    },
+    {
+      "name": "jQuery Basics",
+      "school": "Team Treehouse",
+      "dates": "July 2014",
+      "url": "https://teamtreehouse.com/library/jquery-basics"
+    },
+    {
+      "name": "JavaScript Foundations",
+      "school": "Team Treehouse",
+      "dates": "July 2014",
+      "url": "https://teamtreehouse.com/library/javascript-basics"
+    },
+    {
+      "name": "AJAX Basics",
+      "school": "Team Treehouse",
+      "dates": "July 2014",
+      "url": "https://teamtreehouse.com/library/ajax-basics"
+    },
+    {
+      "name": "jQuery Basics",
+      "school": "Team Treehouse",
+      "dates": "July 2014",
+      "url": "https://teamtreehouse.com/library/jquery-basics"
+    },
+    {
+      "name": "JavaScript Foundations",
+      "school": "Team Treehouse",
+      "dates": "July 2014",
+      "url": "https://teamtreehouse.com/library/javascript-basics"
+    },
+    {
+      "name": "CSS Foundations",
+      "school": "Team Treehouse",
+      "dates": "June-July 2014",
+      "url": "https://teamtreehouse.com/library/css-basics"
+    },
+    {
+      "name": "HTML",
+      "school": "Team Treehouse",
+      "dates": "June 2014",
+      "url": "https://teamtreehouse.com/library/html"
+    },
+    {
+      "name": "How to Make a Website",
+      "school": "Team Treehouse",
+      "dates": "June 2014",
+      "url": "https://teamtreehouse.com/library/how-to-make-a-website"
+    },
+    {
+      "name": "Lynda",
+      "school": "Lynda",
+      "dates": "",
+      "url": ""
+    },
+    {
+      "name": "Lynda",
+      "school": "Lynda",
+      "dates": "",
+      "url": ""
     }
   ]
 }
