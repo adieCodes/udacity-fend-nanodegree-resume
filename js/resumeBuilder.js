@@ -91,7 +91,7 @@ var education = {
       "url": "https://teamtreehouse.com/library/wordpress-theme-development"
     },
     {
-      "name": "The WordPress Codes",
+      "name": "The WordPress Codex",
       "school": "Team Treehouse",
       "dates": "Nov 2014",
       "url": "https://teamtreehouse.com/library/the-wordpress-codex"
@@ -163,24 +163,6 @@ var education = {
       "url": "https://teamtreehouse.com/library/javascript-basics"
     },
     {
-      "name": "AJAX Basics",
-      "school": "Team Treehouse",
-      "dates": "July 2014",
-      "url": "https://teamtreehouse.com/library/ajax-basics"
-    },
-    {
-      "name": "jQuery Basics",
-      "school": "Team Treehouse",
-      "dates": "July 2014",
-      "url": "https://teamtreehouse.com/library/jquery-basics"
-    },
-    {
-      "name": "JavaScript Foundations",
-      "school": "Team Treehouse",
-      "dates": "July 2014",
-      "url": "https://teamtreehouse.com/library/javascript-basics"
-    },
-    {
       "name": "CSS Foundations",
       "school": "Team Treehouse",
       "dates": "June-July 2014",
@@ -197,18 +179,6 @@ var education = {
       "school": "Team Treehouse",
       "dates": "June 2014",
       "url": "https://teamtreehouse.com/library/how-to-make-a-website"
-    },
-    {
-      "name": "Lynda",
-      "school": "Lynda",
-      "dates": "",
-      "url": ""
-    },
-    {
-      "name": "Lynda",
-      "school": "Lynda",
-      "dates": "",
-      "url": ""
     }
   ]
 }
