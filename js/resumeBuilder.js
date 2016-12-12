@@ -135,8 +135,7 @@ var education = {
       "majors": ["n/a", "n/a"],
       "dates": "2001-2003",
       "url": "https://www1.bournemouth.ac.uk/"
-    },
-  ],
+    }],
   "onlineCourses": [
     {
       "title": "Front-End Web Developer Nanodegree",
