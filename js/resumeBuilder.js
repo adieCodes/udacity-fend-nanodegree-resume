@@ -8,11 +8,7 @@ var bio = {
     "twitter": "@adie.codes",
     "location": "Sheffield, UK"
   },
-  "welcomeMessage": "Front-End Web Developer who uses HTML, CSS" +
-    " and JavaScript to build mobile-first responsive sites." +
-    " I enjoy working with people to gain a clear understanding" +
-    " of their business, requirements and users; and then use" +
-    " this knowledge to create a focused and enjoyable experience.",
+  "welcomeMessage": "Front-End Web Developer who uses HTML, CSS and JavaScript to build mobile-first responsive sites. I enjoy working with people to gain a clear understanding of their business, requirements and users; and then use this knowledge to create a focused and enjoyable experience.",
   "skills": ["HTML", "CSS", "JavaScript"],
   "biopic": "images/fry.jpg"
 };
