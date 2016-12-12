@@ -31,14 +31,84 @@ var work = {
       "title": "Studying Web Dev",
       "dates": "Feb 2012-June 2012",
       "location": "Sheffield, UK",
-      "description": "When I was not job hunting, I spent my time learning about coding, design theory and building my first site for a client. I returned to work as my fiancee was made redundant"
+      "description": "When I was not job hunting, I spent my time learning about coding, design theory and building my first site for a client. I returned to work as my fiancee was made redundant."
     },
     {
       "employer": "Virgin Media via Hays Recruitment",
       "title": "Desktop Support Analyst",
       "dates": "April 2011 - Feb 2012",
       "location": "Sheffield UK",
-      "description": "The role was to try to fix faulty PDA's and organise replacements, build functional devices to be sent to the Field Tech and produce reports tracking the allocation of the devices as well as support the 2nd Line EUC Analyst when workload permits."
+      "description": "The role was to fix faulty PDA's and organise replacements, build functional devices to be sent to the Field Tech's and produce reports tracking the allocation of the devices as well as support the 2nd Line EUC Analyst when workload permits."
+    },
+    {
+      "employer": "St Luke’s Hospice (temp via Sue Ross)",
+      "title": "Database Administrator",
+      "dates": "Nov 2010-Mar 2011",
+      "location": "Sheffield, UK",
+      "description": "Responsible for the accuracy and effectiveness of the organisation's database and agreeing criteria for/and producing reports to focus the Fundraising Manager's efforts."
+    },
+    {
+      "employer": "Plusnet (temp via Hays Recruitment)",
+      "title": "Technical Support Agent",
+      "dates": "Aug 2010-Oct 2010",
+      "location": "Sheffield, UK",
+      "description": "Translated connectivity issues into a language the customer understood and talked them through troubleshooting steps; communicating and escalating any major issues/outages with the team and management."
+    },
+    {
+      "employer": "Unemployed",
+      "title": "Full time parent",
+      "dates": "Mar 2010-Aug 2010",
+      "location": "Sheffield, UK",
+      "description": "My partner was required to return to work and we wanted one of us to be a full time parent whilst our son was still developing until he had transitioned and settled in nursery."
+    },
+    {
+      "employer": "UFI Ltd",
+      "title": "Product Co-ordinator",
+      "dates": "Oct 2008-Mar 2010",
+      "location": "Sheffield, UK",
+      "description": "Managed the production of new courses to ensure they met development and launch deadlines. Communicated with the Learning Centre Network to ensure they are aware of all new releases and bug fixes. I was appointed second business lead in a project to develop a new database to be used throughout the organisation, where I was responsible for agreeing and defining business requirements for teams within our department and feeding these back to the requirements team. During this project I learnt formulas and VBA programming to accurately and efficiently cleanse 10 years worth of data; provided solutions for usability and design problems during conception of the database; led testing of the database, managed feedback and agreed priority for fixes; produced user manuals and gave training to teams within the department with supported provided as needed; deconstructed and refined the release process; developed a tracker that was used department-wide to ensure all areas had up-to date information without having to put in a request."
+    },
+    {
+      "employer": "Sue Ross",
+      "title": "Temp Roles",
+      "dates": "May 2008-Oct 2008",
+      "location": "Sheffield, UK",
+      "description": "One of the roles Sue Ross allocated me was at a factory where I was responsible for monitoring stock levels.  This was where I first started to learn about Excel formulas."
+    },
+    {
+      "employer": "BT Lynx Ltd",
+      "title": "Engineering Resource Co-ordinator",
+      "dates": "May 2008 2012-May 2008",
+      "location": "Sheffield, UK",
+      "description": "My role was to organise the Engineers site visits and ensure they had access to the appropriate components. This gave me an understanding of the makeup of computers."
+    },
+    {
+      "employer": "DLA Piper UK LLP",
+      "title": "Anti-Money Laundering Compliance Assistant",
+      "dates": "Dec 2006-Mar 2008",
+      "location": "Sheffield, UK",
+      "description": "I was responsible for identifying all new clients to the requirements of the Law Society. This meant obtaining ID for individual clients and doing relevant searches on Businesses to ensure there were no persons of concern involved in the business."
+    },
+    {
+      "employer": "Norwich Union",
+      "title": "Quality Champion Representative",
+      "dates": "Feb 2006-Oct 2006",
+      "location": "Sheffield, UK",
+      "description": "This involved quality checking the communication between the Pension teams and their clients and ensuring it was of a high standard."
+    },
+    {
+      "employer": "Unemployed",
+      "title": "Relocating and job hunting",
+      "dates": "Nov 2005-Feb 2006",
+      "location": "Sheffield, UK",
+      "description": "I spent this time relocating to Sheffield and having an extended family holiday. I supported myself during this period through my savings."
+    },
+    {
+      "employer": "Mortgage Intelligence Ltd",
+      "title": "Senior Network Authoriser",
+      "dates": "May 2004-Nov 2005",
+      "location": "Sheffield, UK",
+      "description": "Mortgage Intelligence are a Mortgage Network who offer compliance services to Mortgage Brokers. My initial role was to process the applications for new members and undertake background checks to ensure there were no concerns with regards to their finances or trustworthiness. I was promoted to Team Leader for the Network Team. This role comprised of leading a team of three Network Administrators, making presentations and completing reports to ensure we were meeting targets and to push through my suggestions for improvements to processes (which is a theme throughout my career)."
     }
   ]
 }
