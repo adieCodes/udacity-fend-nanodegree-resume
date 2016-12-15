@@ -6,11 +6,11 @@ var bio = {
     "email": "hello@adie.codes",
     "github": "adieCodes",
     "twitter": "@adie.codes",
-    "location": "Sheffield, UK"
+    "location": "Sheffield, UK",
   },
   "welcomeMessage": "Front-End Web Developer who uses HTML, CSS and JavaScript to build mobile-first responsive sites. I enjoy working with people to gain a clear understanding of their business, requirements and users; and then use this knowledge to create a focused and enjoyable experience.",
   "skills": ["HTML", "CSS", "JavaScript"],
-  "biopic": "images/fry.jpg"
+  "biopic": "images/profile-pic.jpg",
 };
 
 var education = {
@@ -248,7 +248,90 @@ var projects = {
   ]
 }
 
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
+// receive bio object
+// check if bio object has properties
+// check type of bio property
+// format property
+// add property in appropriate location
+
+bio.showContact = function(obj){
+  // loop through bio.contacts
+  $.each(obj, function(key){
+    // store HTML
+    var contactHTML = [];
+    // add appropriate formatting
+    if(key == 'mobile'){
+      var formattedmobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
+      contactHTML.push(formattedmobile);
+    } else if (key == 'email'){
+        var formattedemail = HTMLemail.replace('%data%', bio.contacts.email);
+        contactHTML.push(formattedemail);
+    } else if (key == 'twitter'){
+        var formattedtwitter = HTMLtwitter.replace('%data%', bio.contacts.twitter);
+        contactHTML.push(formattedtwitter);
+    } else if (key == 'github'){
+        var formattedgithub = HTMLgithub.replace('%data%', bio.contacts.github);
+        contactHTML.push(formattedgithub);
+    } else if (key == 'blog'){
+        var formattedblog = HTMLblog.replace('%data%', bio.contacts.blog);
+        contactHTML.push(formattedblog);
+    } else if (key == 'location'){
+        var formattedlocation = HTMLlocation.replace('%data%', bio.contacts.location);
+        contactHTML.push(formattedlocation);
+    } else {
+        var formattedcontactGeneric = HTMLcontactGeneric.replace('%data%', this);
+        contactHTML.push(formattedcontactGeneric);
+    }
+    // if no match pass generic formatting
+    console.log(contactHTML);
+  })
+};
+
+bio.display = function(){
+    var headerContent = [];
+    if(bio.hasOwnProperty('name')){
+      var formattedName = HTMLheaderName.replace("%data%", bio.name);
+      headerContent.push(formattedName);
+    }
+    if(bio.hasOwnProperty('role')){
+      var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+      headerContent.push(formattedRole);
+    }
+    if(bio.hasOwnProperty('contacts')){
+      bio.showContact(bio.contacts);
+    }
+    $('#header').prepend(headerContent);
+}
+
+var HTMLbioPic = '<img src="%data%" class="biopic">';
+var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
+
+var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-column"></ul>';
+var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
+
+
+bio.display2 = function(){
+  // create variabiles to store HTML from helper.js and replace %data% with relevant info from bio object
+  //var formattedName = HTMLheaderName.replace("%data%", bio.name);
+  //var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+  var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+  var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+  var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter)
+  var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+  var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+  var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
+  var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+  var formattedSkillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-column"></ul>';
+  var formattedSkills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
+  /*bio.skills.each(function(i){
+
+  })*/
+  $('#header').prepend(formattedName, formattedRole);
+  $('#topContacts').append(formattedMobile, formattedEmail, formattedGithub, formattedTwitter, formattedLocation);
+
+}
+
+bio.display();
 
 //$("#header").append(formattedName);
 
