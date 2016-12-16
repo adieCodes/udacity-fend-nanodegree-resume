@@ -292,6 +292,8 @@ bio.showContact = function(obj){
 
 bio.display = function(){
     var headerContent = [];
+    var heroContent = [];
+    var skillsContent = [];
     if(bio.hasOwnProperty('name')){
       var formattedName = HTMLheaderName.replace("%data%", bio.name);
       headerContent.push(formattedName);
@@ -303,51 +305,26 @@ bio.display = function(){
     if(bio.hasOwnProperty('contacts')){
       bio.showContact(bio.contacts);
     }
+    if(bio.hasOwnProperty('biopic')){
+      var formattedbioPic = HTMLbioPic.replace("%data%", bio.biopic);
+      heroContent.push(formattedbioPic);
+    }
+    if(bio.hasOwnProperty('welcomeMessage')){
+      var formattedwelcomeMessage = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
+      heroContent.push(formattedwelcomeMessage);
+    }
+    if(bio.hasOwnProperty('skills')){
+      $('#topContacts').after(HTMLskillsStart);
+      bio.skills.forEach(function(prop){
+        var formattedSkill = HTMLskills.replace('%data%', prop);
+        $('#skills').append(formattedSkill);
+      })
+    }
     $('#header').prepend(headerContent);
-}
-
-var HTMLbioPic = '<img src="%data%" class="biopic">';
-var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
-
-var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-column"></ul>';
-var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
-
-
-bio.display2 = function(){
-  // create variabiles to store HTML from helper.js and replace %data% with relevant info from bio object
-  //var formattedName = HTMLheaderName.replace("%data%", bio.name);
-  //var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-  var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-  var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-  var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter)
-  var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-  var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-  var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
-  var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-  var formattedSkillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-column"></ul>';
-  var formattedSkills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
-  /*bio.skills.each(function(i){
-
-  })*/
-  $('#header').prepend(formattedName, formattedRole);
-  $('#topContacts').append(formattedMobile, formattedEmail, formattedGithub, formattedTwitter, formattedLocation);
-
+    $('#topContacts').after(heroContent);
 }
 
 bio.display();
-
-//$("#header").append(formattedName);
-
-/*if(bio.skills.length > 0){
-  $("#header").append(HTMLskillsStart);
-
-  var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-  $("#skills").append(formattedSkill);
-  formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-  $("#skills").append(formattedSkill);
-  formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-  $("#skills").append(formattedSkill);
-}*/
 
 work.displayWork = function(){
   for(role in work.roles){
