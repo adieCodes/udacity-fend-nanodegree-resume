@@ -7,6 +7,8 @@ var bio = {
     "github": "adieCodes",
     "twitter": "@adie.codes",
     "location": "Sheffield, UK",
+    "test": "test",
+    "more": "more"
   },
   "welcomeMessage": "Front-End Web Developer who uses HTML, CSS and JavaScript to build mobile-first responsive sites. I enjoy working with people to gain a clear understanding of their business, requirements and users; and then use this knowledge to create a focused and enjoyable experience.",
   "skills": ["HTML", "CSS", "JavaScript"],
@@ -264,26 +266,27 @@ bio.showContact = function(obj){
       var formattedmobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
       contactHTML.push(formattedmobile);
     } else if (key == 'email'){
-        var formattedemail = HTMLemail.replace('%data%', bio.contacts.email);
-        contactHTML.push(formattedemail);
+      var formattedemail = HTMLemail.replace('%data%', bio.contacts.email);
+      contactHTML.push(formattedemail);
     } else if (key == 'twitter'){
-        var formattedtwitter = HTMLtwitter.replace('%data%', bio.contacts.twitter);
-        contactHTML.push(formattedtwitter);
+      var formattedtwitter = HTMLtwitter.replace('%data%', bio.contacts.twitter);
+      contactHTML.push(formattedtwitter);
     } else if (key == 'github'){
-        var formattedgithub = HTMLgithub.replace('%data%', bio.contacts.github);
-        contactHTML.push(formattedgithub);
+      var formattedgithub = HTMLgithub.replace('%data%', bio.contacts.github);
+      contactHTML.push(formattedgithub);
     } else if (key == 'blog'){
-        var formattedblog = HTMLblog.replace('%data%', bio.contacts.blog);
-        contactHTML.push(formattedblog);
+      var formattedblog = HTMLblog.replace('%data%', bio.contacts.blog);
+      contactHTML.push(formattedblog);
     } else if (key == 'location'){
-        var formattedlocation = HTMLlocation.replace('%data%', bio.contacts.location);
-        contactHTML.push(formattedlocation);
+      var formattedlocation = HTMLlocation.replace('%data%', bio.contacts.location);
+      contactHTML.push(formattedlocation);
     } else {
-        var formattedcontactGeneric = HTMLcontactGeneric.replace('%data%', this);
-        contactHTML.push(formattedcontactGeneric);
+      // if no match pass generic formatting
+      var formattedcontactGeneric = HTMLcontactGeneric.replace('%data%', this);
+      formattedcontactGeneric = formattedcontactGeneric.replace('%contact%', key);
+      contactHTML.push(formattedcontactGeneric);
     }
-    // if no match pass generic formatting
-    console.log(contactHTML);
+    $('#topContacts').append(contactHTML);
   })
 };
 
