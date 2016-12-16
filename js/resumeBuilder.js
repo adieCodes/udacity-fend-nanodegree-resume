@@ -326,21 +326,20 @@ bio.display = function(){
 
 bio.display();
 
-work.displayWork = function(){
-  for(role in work.roles){
-    if(work.roles.hasOwnProperty(role)){
+work.display= function(){
+  work.roles.forEach(function(role){
+    /*if(work.roles.hasOwnProperty(role)){*/
       $("#workExperience").append(HTMLworkStart);
-      var formattedEmployer = HTMLworkEmployer.replace("%data%", work.roles[role].employer);
-      var formattedEmployerTitle = HTMLworkTitle.replace("%data%", work.roles[role].title);
+      var formattedEmployer = HTMLworkEmployer.replace("%data%", role.employer);
+      var formattedEmployerTitle = HTMLworkTitle.replace("%data%", role.title);
       var formattedEmployerTitle = formattedEmployer + formattedEmployerTitle;
-      var formattedEmployerDates = HTMLworkDates.replace("%data%", work.roles[role].dates)
-      var formattedEmployerLocation = HTMLworkLocation.replace("%data%", work.roles[role].location);
-      var formattedEmployerDescription = HTMLworkDescription.replace("%data%", work.roles[role].description)
+      var formattedEmployerDates = HTMLworkDates.replace("%data%", role.dates);
+      var formattedEmployerLocation = HTMLworkLocation.replace("%data%", role.location);
+      var formattedEmployerDescription = HTMLworkDescription.replace("%data%", role.description)
       $(".work-entry:last").append(formattedEmployerTitle, formattedEmployerDates, formattedEmployerLocation, formattedEmployerDescription);
-    }
-  }
+  })
 }
-//work.displayWork();
+work.display();
 
 /*$('#main').append(internationalizeButton);
 
