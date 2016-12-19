@@ -242,10 +242,16 @@ var projects = {
       "images": ["images/portfolio-logo.png", "images/portfolio-screenshot.png"]
     },
     {
-      "title": "TEST",
-      "dates": "November 2016",
-      "description": "Responsive portfolio project using Flexbox",
-      "images": ["images/logoLine.svg"]
+      "title": "Wikipedia Viewer",
+      "dates": "May 2016",
+      "description": "Wikipedia seach app using the Wikipedia API.",
+      "images": ["images/wikipedia-input.png", "images/wikipedia-output.png"]
+    },
+    {
+      "title": "Pomodoro Timer",
+      "dates": "April 2016",
+      "description": "Pomodoro timer with start, stop, pause and customised timer",
+      "images": ["images/pomodoro-screenshot.png"]
     }
   ]
 }
