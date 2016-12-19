@@ -239,13 +239,13 @@ var projects = {
       "title": "Udacity Portfolio Project",
       "dates": "November 2016",
       "description": "Responsive portfolio project using Flexbox",
-      "image": "images/logoLine.svg"
+      "images": ["images/portfolio-logo.png", "images/portfolio-screenshot.png"]
     },
     {
       "title": "TEST",
       "dates": "November 2016",
       "description": "Responsive portfolio project using Flexbox",
-      "image": "images/logoLine.svg"
+      "images": ["images/logoLine.svg"]
     }
   ]
 }
@@ -344,12 +344,24 @@ work.display();
 projects.display = function(){
   projects.project.forEach(function(proj){
     $("#projects").append(HTMLprojectStart);
-    var formattedProjectTitle = HTMLprojectTitle.replace("%data%", proj.title);
-    var formattedProjectDates = HTMLprojectDates.replace("%data%", proj.dates);
-    var formattedProjectDescription = HTMLprojectDescription.replace("%data%",proj.description);
-    var formattedProjectImage = HTMLprojectImage.replace("%data%", proj.image);
+    if(proj.hasOwnProperty('title')){
+      var formattedProjectTitle = HTMLprojectTitle.replace("%data%", proj.title);
+    }
+    if(proj.hasOwnProperty('dates')){
+      var formattedProjectDates = HTMLprojectDates.replace("%data%", proj.dates);
+    }
+    if(proj.hasOwnProperty('description')){
+      var formattedProjectDescription = HTMLprojectDescription.replace("%data%",proj.description);
+    }
+    if(proj.hasOwnProperty('images')){
+      var formattedProjectImages = [];
+      proj.images.forEach(function(img){
+        var formattedProjectImage = HTMLprojectImage.replace("%data%", img);
+        formattedProjectImages.push(formattedProjectImage);
+      })
+    }
 
-    $(".project-entry:last").append(formattedProjectTitle, formattedProjectDates, formattedProjectDescription, formattedProjectImage);
+    $(".project-entry:last").append(formattedProjectTitle, formattedProjectDates, formattedProjectDescription, formattedProjectImages);
   })
 }
-//projects.display()
+projects.display()
