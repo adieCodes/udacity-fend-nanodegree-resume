@@ -341,17 +341,6 @@ work.display= function(){
 }
 work.display();
 
-/*$('#main').append(internationalizeButton);
-
-function inName(name){
-  var internationalName = name.split(" ");
-  internationalName[0] = internationalName[0][0].toUpperCase() + internationalName[0].slice(1).toLowerCase();
-  internationalName[1] = internationalName[1].toUpperCase();
-  internationalName = internationalName.join(" ");
-  return internationalName;
-}
-inName("sebastian thrun");*/
-
 projects.display = function(){
   projects.project.forEach(function(proj){
     $("#projects").append(HTMLprojectStart);
