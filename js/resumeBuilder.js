@@ -336,12 +336,22 @@ work.display= function(){
   work.roles.forEach(function(role){
     /*if(work.roles.hasOwnProperty(role)){*/
       $("#workExperience").append(HTMLworkStart);
-      var formattedEmployer = HTMLworkEmployer.replace("%data%", role.employer);
-      var formattedEmployerTitle = HTMLworkTitle.replace("%data%", role.title);
+      if(role.hasOwnProperty('employer')){
+        var formattedEmployer = HTMLworkEmployer.replace("%data%", role.employer);
+      }
+      if(role.hasOwnProperty('title')){
+        var formattedEmployerTitle = HTMLworkTitle.replace("%data%", role.title);
+      }
       var formattedEmployerTitle = formattedEmployer + formattedEmployerTitle;
-      var formattedEmployerDates = HTMLworkDates.replace("%data%", role.dates);
-      var formattedEmployerLocation = HTMLworkLocation.replace("%data%", role.location);
-      var formattedEmployerDescription = HTMLworkDescription.replace("%data%", role.description)
+      if(role.hasOwnProperty('dates')){
+        var formattedEmployerDates = HTMLworkDates.replace("%data%", role.dates);
+      }
+      if(role.hasOwnProperty('location')){
+        var formattedEmployerLocation = HTMLworkLocation.replace("%data%", role.location);
+      }
+      if(role.hasOwnProperty('description')){
+        var formattedEmployerDescription = HTMLworkDescription.replace("%data%", role.description)
+      }
       $(".work-entry:last").append(formattedEmployerTitle, formattedEmployerDates, formattedEmployerLocation, formattedEmployerDescription);
   })
 }
