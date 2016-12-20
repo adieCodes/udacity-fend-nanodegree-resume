@@ -381,3 +381,31 @@ projects.display = function(){
   })
 }
 projects.display()
+
+education.display = function(){
+  if(education.schools.length > 0){
+    $('#education').append(HTMLschoolStart);
+    education.schools.forEach(function(sch){
+      if(sch.hasOwnProperty('name')){
+        var formattedSchoolName = HTMLschoolName.replace('%data%', sch.name);
+      }
+      if(sch.hasOwnProperty('location')){
+        var formattedSchoolLocation = HTMLschoolLocation.replace('%data%', sch.location);
+      }
+      if(sch.hasOwnProperty('degree')){
+        var formattedSchoolDegree = HTMLschoolDegree.replace('%data%', sch.degree);
+      }
+      if(sch.hasOwnProperty('majors')){
+        var formattedSchoolMajor = HTMLschoolMajor.replace('%data%', sch.majors);
+      }
+      if(sch.hasOwnProperty('dates')){
+        var formattedSchoolDates = HTMLschoolDates.replace('%data%', sch.dates);
+      }
+      if(sch.hasOwnProperty('url')){
+        formattedSchoolName = formattedSchoolName.replace('#', sch.url);
+      }
+      $('.education-entry:last').append(formattedSchoolName + formattedSchoolDegree, formattedSchoolDates, formattedSchoolLocation, formattedSchoolMajor);
+    })
+  }
+}
+education.display();
