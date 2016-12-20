@@ -33,103 +33,103 @@ var education = {
       "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001?v=fe1"
     },
     {
-      "name": "Front End Developer Certification",
+      "title": "Front End Developer Certification",
       "school": "Free Code Camp",
       "dates": "June 2015-present",
       "url": "https://www.freecodecamp.com/adieCodes"
     },
     {
-      "name": "WordPress Theme Development",
+      "title": "WordPress Theme Development",
       "school": "Team Treehouse",
       "dates": "Nov 2014",
       "url": "https://teamtreehouse.com/library/wordpress-theme-development"
     },
     {
-      "name": "The WordPress Codex",
+      "title": "The WordPress Codex",
       "school": "Team Treehouse",
       "dates": "Nov 2014",
       "url": "https://teamtreehouse.com/library/the-wordpress-codex"
     },
     {
-      "name": "How to Build a WordPress Theme",
+      "title": "How to Build a WordPress Theme",
       "school": "Team Treehouse",
       "dates": "Aug 2014",
       "url": "https://teamtreehouse.com/library/how-to-make-a-website-with-wordpress"
     },
     {
-      "name": "Local WordPress Development",
+      "title": "Local WordPress Development",
       "school": "Team Treehouse",
       "dates": "Aug 2014",
       "url": "https://teamtreehouse.com/library/local-wordpress-development"
     },
     {
-      "name": "How to Make a Website with WordPress",
+      "title": "How to Make a Website with WordPress",
       "school": "Team Treehouse",
       "dates": "Aug 2014",
       "url": "https://teamtreehouse.com/library/how-to-make-a-website-with-wordpress"
     },
     {
-      "name": "Sass Basics",
+      "title": "Sass Basics",
       "school": "Team Treehouse",
       "dates": "July 2014",
       "url": "https://teamtreehouse.com/library/sass-basics"
     },
     {
-      "name": "Git Basics",
+      "title": "Git Basics",
       "school": "Team Treehouse",
       "dates": "July 2014",
       "url": "https://teamtreehouse.com/library/git-basics"
     },
     {
-      "name": "Console Foundations",
+      "title": "Console Foundations",
       "school": "Team Treehouse",
       "dates": "July 2014",
       "url": "https://teamtreehouse.com/library/console-foundations"
     },
     {
-      "name": "Website Optimization",
+      "title": "Website Optimization",
       "school": "Team Treehouse",
       "dates": "July 2014",
       "url": "https://teamtreehouse.com/library/website-optimization"
     },
     {
-      "name": "Accessibility",
+      "title": "Accessibility",
       "school": "Team Treehouse",
       "dates": "July 2014",
       "url": "https://teamtreehouse.com/library/accessibility"
     },
     {
-      "name": "AJAX Basics",
+      "title": "AJAX Basics",
       "school": "Team Treehouse",
       "dates": "July 2014",
       "url": "https://teamtreehouse.com/library/ajax-basics"
     },
     {
-      "name": "jQuery Basics",
+      "title": "jQuery Basics",
       "school": "Team Treehouse",
       "dates": "July 2014",
       "url": "https://teamtreehouse.com/library/jquery-basics"
     },
     {
-      "name": "JavaScript Foundations",
+      "title": "JavaScript Foundations",
       "school": "Team Treehouse",
       "dates": "July 2014",
       "url": "https://teamtreehouse.com/library/javascript-basics"
     },
     {
-      "name": "CSS Foundations",
+      "title": "CSS Foundations",
       "school": "Team Treehouse",
       "dates": "June-July 2014",
       "url": "https://teamtreehouse.com/library/css-basics"
     },
     {
-      "name": "HTML",
+      "title": "HTML",
       "school": "Team Treehouse",
       "dates": "June 2014",
       "url": "https://teamtreehouse.com/library/html"
     },
     {
-      "name": "How to Make a Website",
+      "title": "How to Make a Website",
       "school": "Team Treehouse",
       "dates": "June 2014",
       "url": "https://teamtreehouse.com/library/how-to-make-a-website"
@@ -405,6 +405,26 @@ education.display = function(){
         formattedSchoolName = formattedSchoolName.replace('#', sch.url);
       }
       $('.education-entry:last').append(formattedSchoolName + formattedSchoolDegree, formattedSchoolDates, formattedSchoolLocation, formattedSchoolMajor);
+    })
+  }
+  if(education.onlineCourses.length > 0){
+    $('#education').append(HTMLonlineClasses, HTMLschoolStart);
+    education.onlineCourses.forEach(function(course){
+      if(course.hasOwnProperty('title')){
+        var formattedonlineTitle = HTMLonlineTitle.replace('%data%', course.title);
+      }
+      if(course.hasOwnProperty('school')){
+        var formattedonlineSchool = HTMLonlineSchool.replace('%data%', course.school);
+      }
+      if(course.hasOwnProperty('dates')){
+        var formattedonlineDates = HTMLonlineDates.replace('%data%', course.dates);
+      }
+      if(course.hasOwnProperty('url')){
+        var formattedonlineURL = HTMLonlineURL.replace('%data%', course.url);
+        formattedonlineURL = formattedonlineURL.replace('#', course.url);
+        formattedonlineTitle = formattedonlineTitle.replace('#', course.url);
+      }
+      $('.education-entry:last').append(formattedonlineTitle + formattedonlineSchool, formattedonlineDates, formattedonlineURL);
     })
   }
 }
