@@ -135,7 +135,7 @@ var education = {
       "url": "https://teamtreehouse.com/library/how-to-make-a-website"
     }
   ]
-}
+};
 
 var work = {
   "roles": [
@@ -231,7 +231,7 @@ var work = {
       "description": "Mortgage Intelligence are a Mortgage Network who offer compliance services to Mortgage Brokers. My initial role was to process the applications for new members and undertake background checks to ensure there were no concerns with regards to their finances or trustworthiness. I was promoted to Team Leader for the Network Team. This role comprised of leading a team of three Network Administrators, making presentations and completing reports to ensure we were meeting targets and to push through my suggestions for improvements to processes (which is a theme throughout my career)."
     }
   ]
-}
+};
 
 var projects = {
   "project": [
@@ -254,7 +254,7 @@ var projects = {
       "images": ["images/pomodoro-screenshot.png"]
     }
   ]
-}
+};
 
 // receive bio object
 // check if bio object has properties
@@ -293,7 +293,7 @@ bio.showContact = function(obj){
       contactHTML.push(formattedcontactGeneric);
     }
     $('#topContacts').append(contactHTML);
-  })
+  });
 };
 
 bio.display = function(){
@@ -324,11 +324,11 @@ bio.display = function(){
       bio.skills.forEach(function(prop){
         var formattedSkill = HTMLskills.replace('%data%', prop);
         $('#skills').append(formattedSkill);
-      })
+      });
     }
     $('#header').prepend(headerContent);
     $('#topContacts').after(heroContent);
-}
+};
 
 bio.display();
 
@@ -336,98 +336,112 @@ work.display= function(){
   work.roles.forEach(function(role){
     /*if(work.roles.hasOwnProperty(role)){*/
       $("#workExperience").append(HTMLworkStart);
+      var formattedEmployer, formattedEmployerTitle, formattedEmployerDates, formattedEmployerLocation, formattedEmployerDescription;
       if(role.hasOwnProperty('employer')){
-        var formattedEmployer = HTMLworkEmployer.replace("%data%", role.employer);
+        formattedEmployer = HTMLworkEmployer.replace("%data%", role.employer);
       }
       if(role.hasOwnProperty('title')){
-        var formattedEmployerTitle = HTMLworkTitle.replace("%data%", role.title);
+        formattedEmployerTitle = HTMLworkTitle.replace("%data%", role.title);
       }
-      var formattedEmployerTitle = formattedEmployer + formattedEmployerTitle;
+      var formattedEmployerAndTitle = formattedEmployer + formattedEmployerTitle;
       if(role.hasOwnProperty('dates')){
-        var formattedEmployerDates = HTMLworkDates.replace("%data%", role.dates);
+        formattedEmployerDates = HTMLworkDates.replace("%data%", role.dates);
       }
       if(role.hasOwnProperty('location')){
-        var formattedEmployerLocation = HTMLworkLocation.replace("%data%", role.location);
+        formattedEmployerLocation = HTMLworkLocation.replace("%data%", role.location);
       }
       if(role.hasOwnProperty('description')){
-        var formattedEmployerDescription = HTMLworkDescription.replace("%data%", role.description)
+        formattedEmployerDescription = HTMLworkDescription.replace("%data%", role.description);
       }
-      $(".work-entry:last").append(formattedEmployerTitle, formattedEmployerDates, formattedEmployerLocation, formattedEmployerDescription);
-  })
-}
+      $(".work-entry:last").append(formattedEmployerAndTitle, formattedEmployerDates, formattedEmployerLocation, formattedEmployerDescription);
+  });
+};
 work.display();
 
 projects.display = function(){
   projects.project.forEach(function(proj){
     $("#projects").append(HTMLprojectStart);
+    var formattedProjectTitle,
+      formattedProjectDates,
+      formattedProjectDescription,
+      formattedProjectImages;
     if(proj.hasOwnProperty('title')){
-      var formattedProjectTitle = HTMLprojectTitle.replace("%data%", proj.title);
+      formattedProjectTitle = HTMLprojectTitle.replace("%data%", proj.title);
     }
     if(proj.hasOwnProperty('dates')){
-      var formattedProjectDates = HTMLprojectDates.replace("%data%", proj.dates);
+      formattedProjectDates = HTMLprojectDates.replace("%data%", proj.dates);
     }
     if(proj.hasOwnProperty('description')){
-      var formattedProjectDescription = HTMLprojectDescription.replace("%data%",proj.description);
+      formattedProjectDescription = HTMLprojectDescription.replace("%data%",proj.description);
     }
     if(proj.hasOwnProperty('images')){
-      var formattedProjectImages = [];
+      formattedProjectImages = [];
       proj.images.forEach(function(img){
         var formattedProjectImage = HTMLprojectImage.replace("%data%", img);
         formattedProjectImages.push(formattedProjectImage);
-      })
+      });
     }
 
     $(".project-entry:last").append(formattedProjectTitle, formattedProjectDates, formattedProjectDescription, formattedProjectImages);
-  })
-}
-projects.display()
+  });
+};
+projects.display();
 
 education.display = function(){
   if(education.schools.length > 0){
     $('#education').append(HTMLschoolStart);
     education.schools.forEach(function(sch){
+      var formattedSchoolName,
+        formattedSchoolLocation,
+        formattedSchoolDegree,
+        formattedSchoolMajor,
+        formattedSchoolDates;
       if(sch.hasOwnProperty('name')){
-        var formattedSchoolName = HTMLschoolName.replace('%data%', sch.name);
+        formattedSchoolName = HTMLschoolName.replace('%data%', sch.name);
       }
       if(sch.hasOwnProperty('location')){
-        var formattedSchoolLocation = HTMLschoolLocation.replace('%data%', sch.location);
+        formattedSchoolLocation = HTMLschoolLocation.replace('%data%', sch.location);
       }
       if(sch.hasOwnProperty('degree')){
-        var formattedSchoolDegree = HTMLschoolDegree.replace('%data%', sch.degree);
+        formattedSchoolDegree = HTMLschoolDegree.replace('%data%', sch.degree);
       }
       if(sch.hasOwnProperty('majors')){
-        var formattedSchoolMajor = HTMLschoolMajor.replace('%data%', sch.majors);
+        formattedSchoolMajor = HTMLschoolMajor.replace('%data%', sch.majors);
       }
       if(sch.hasOwnProperty('dates')){
-        var formattedSchoolDates = HTMLschoolDates.replace('%data%', sch.dates);
+        formattedSchoolDates = HTMLschoolDates.replace('%data%', sch.dates);
       }
       if(sch.hasOwnProperty('url')){
         formattedSchoolName = formattedSchoolName.replace('#', sch.url);
       }
       $('.education-entry:last').append(formattedSchoolName + formattedSchoolDegree, formattedSchoolDates, formattedSchoolLocation, formattedSchoolMajor);
-    })
+    });
   }
   if(education.onlineCourses.length > 0){
     $('#education').append(HTMLonlineClasses, HTMLschoolStart);
     education.onlineCourses.forEach(function(course){
+      var formattedonlineTitle,
+        formattedonlineSchool,
+        formattedonlineDates,
+        formattedonlineURL;
       if(course.hasOwnProperty('title')){
-        var formattedonlineTitle = HTMLonlineTitle.replace('%data%', course.title);
+        formattedonlineTitle = HTMLonlineTitle.replace('%data%', course.title);
       }
       if(course.hasOwnProperty('school')){
-        var formattedonlineSchool = HTMLonlineSchool.replace('%data%', course.school);
+        formattedonlineSchool = HTMLonlineSchool.replace('%data%', course.school);
       }
       if(course.hasOwnProperty('dates')){
-        var formattedonlineDates = HTMLonlineDates.replace('%data%', course.dates);
+        formattedonlineDates = HTMLonlineDates.replace('%data%', course.dates);
       }
       if(course.hasOwnProperty('url')){
-        var formattedonlineURL = HTMLonlineURL.replace('%data%', course.url);
+        formattedonlineURL = HTMLonlineURL.replace('%data%', course.url);
         formattedonlineURL = formattedonlineURL.replace('#', course.url);
         formattedonlineTitle = formattedonlineTitle.replace('#', course.url);
       }
       $('.education-entry:last').append(formattedonlineTitle + formattedonlineSchool, formattedonlineDates, formattedonlineURL);
-    })
+    });
   }
-}
+};
 education.display();
 
 $('#mapDiv').append(googleMap);
