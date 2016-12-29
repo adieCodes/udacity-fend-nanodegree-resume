@@ -1,3 +1,10 @@
+// TODO: Add links to contact info //
+// TODO: Replace profile photo //
+// TODO: Reduce image size //
+// TODO: Test links //
+// TODO: Change name to work.jobs //
+// TODO: Add a loop to display function that hides > 5 employers/courses/etc and displays a show more button //
+
 var bio = {
 	"name": "Adie Williams",
 	"role": "Front-End Web Developer",
