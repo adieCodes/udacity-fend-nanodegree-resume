@@ -403,12 +403,14 @@ education.display = function() {
 		});
 	}
 	if (education.onlineCourses.length > 0) {
-		$('#education').append(HTMLonlineClasses, HTMLschoolStart);
+		var i = 0;
+		$('#education').append(HTMLonlineClasses);
 		education.onlineCourses.forEach(function(course) {
 			var formattedonlineTitle,
 				formattedonlineSchool,
 				formattedonlineDates,
 				formattedonlineURL;
+			$('#education').append(HTMLschoolStart);
 			if (course.hasOwnProperty('title')) {
 				formattedonlineTitle = HTMLonlineTitle.replace('%data%', course.title);
 			}
@@ -424,6 +426,24 @@ education.display = function() {
 				formattedonlineTitle = formattedonlineTitle.replace('#', course.url);
 			}
 			$('.education-entry:last').append(formattedonlineTitle + formattedonlineSchool, formattedonlineDates, formattedonlineURL);
+			if (i > 4) {
+				$(".education-entry:last").addClass('hide');
+			}
+			i++;
+		});
+		if ($(".education-entry:last").hasClass('hide')) {
+			var educationBtn;
+			educationBtn = '<button class="btn btn__edu">More</button>';
+			$('#education').append(educationBtn);
+		}
+		$(".btn__edu").click(function() {
+			if ($(".education-entry").hasClass('unhide')) {
+				$(".education-entry").removeClass('unhide');
+				$('.btn__edu').html("More");
+			} else {
+				$(".education-entry").addClass('unhide');
+				$('.btn__edu').html("Less");
+			}
 		});
 	}
 };
