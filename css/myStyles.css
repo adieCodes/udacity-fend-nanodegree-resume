@@ -5,3 +5,10 @@
 .unhide {
   display: block;
 }
+
+.btn {
+  display: block;
+  width: 10rem;
+  margin: 1rem auto;
+  padding: 0.5rem;
+}
