@@ -302,7 +302,6 @@ bio.display();
 work.display = function() {
 	var i = 0;
 	work.roles.forEach(function(role) {
-		/*if(work.roles.hasOwnProperty(role)){*/
 		$("#workExperience").append(HTMLworkStart);
 		var formattedEmployer, formattedEmployerTitle, formattedEmployerDates, formattedEmployerLocation, formattedEmployerDescription;
 		if (role.hasOwnProperty('employer')) {
@@ -333,10 +332,14 @@ work.display = function() {
 		$('#workExperience').append(workBtn);
 	}
 	$(".btn__work").click(function() {
-		if ($(".work-entry").hasClass('hide')) {
-			$(".work-entry").toggle('hide');
+		if ($(".work-entry").hasClass('unhide')) {
+			$(".work-entry").removeClass('unhide');
+			$('.btn__work').html("More");
+		} else {
+			$(".work-entry").addClass('unhide');
+			$('.btn__work').html("Less");
 		}
-	})
+	});
 };
 work.display();
 
