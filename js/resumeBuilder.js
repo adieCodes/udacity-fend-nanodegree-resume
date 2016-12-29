@@ -300,6 +300,7 @@ bio.display = function() {
 bio.display();
 
 work.display = function() {
+	var i = 0;
 	work.roles.forEach(function(role) {
 		/*if(work.roles.hasOwnProperty(role)){*/
 		$("#workExperience").append(HTMLworkStart);
@@ -321,7 +322,21 @@ work.display = function() {
 			formattedEmployerDescription = HTMLworkDescription.replace("%data%", role.description);
 		}
 		$(".work-entry:last").append(formattedEmployerAndTitle, formattedEmployerDates, formattedEmployerLocation, formattedEmployerDescription);
+		if (i > 4) {
+			$(".work-entry:last").addClass('hide');
+		}
+		i++;
 	});
+	if ($(".work-entry:last").hasClass('hide')) {
+		var workBtn;
+		workBtn = '<button class="btn btn__work">More</button>';
+		$('#workExperience').append(workBtn);
+	}
+	$(".btn__work").click(function() {
+		if ($(".work-entry").hasClass('hide')) {
+			$(".work-entry").toggle('hide');
+		}
+	})
 };
 work.display();
 
