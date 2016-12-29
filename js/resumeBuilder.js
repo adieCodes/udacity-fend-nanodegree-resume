@@ -344,6 +344,7 @@ work.display = function() {
 work.display();
 
 projects.display = function() {
+	var i = 0;
 	projects.project.forEach(function(proj) {
 		$("#projects").append(HTMLprojectStart);
 		var formattedProjectTitle,
@@ -366,8 +367,25 @@ projects.display = function() {
 				formattedProjectImages.push(formattedProjectImage);
 			});
 		}
-
 		$(".project-entry:last").append(formattedProjectTitle, formattedProjectDates, formattedProjectDescription, formattedProjectImages);
+		if (i > 4) {
+			$(".project-entry:last").addClass('hide');
+		}
+		i++;
+	});
+	if ($(".project-entry:last").hasClass('hide')) {
+		var educationBtn;
+		educationBtn = '<button class="btn btn__project">More</button>';
+		$('#projects').append(educationBtn);
+	}
+	$(".btn__project").click(function() {
+		if ($(".project-entry").hasClass('unhide')) {
+			$(".project-entry").removeClass('unhide');
+			$('.btn__project').html("More");
+		} else {
+			$(".project-entry").addClass('unhide');
+			$('.btn__project').html("Less");
+		}
 	});
 };
 projects.display();
