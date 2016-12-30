@@ -8,9 +8,20 @@
 
 .btn {
   display: block;
+  font-size: 0.8rem;
   width: 10rem;
   margin: 1rem auto;
   padding: 0.5rem;
+  background-color: #1199c3;
+  border: none;
+  color: white;
+  box-shadow: 0.25rem 0.25rem 0.25rem #073d4e;
+  transition: 0.2s all;
+}
+
+.btn:hover {
+  box-shadow: none;
+  transition: 0.2s all;
 }
 
 #header,
