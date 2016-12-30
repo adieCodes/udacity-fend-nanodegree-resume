@@ -206,7 +206,7 @@ var work = {
 };
 
 var projects = {
-	"project": [{
+	"projects": [{
 		"title": "Udacity Portfolio Project",
 		"dates": "November 2016",
 		"description": "Responsive portfolio project using Flexbox",
@@ -346,7 +346,7 @@ work.display();
 
 projects.display = function() {
 	var i = 0;
-	projects.project.forEach(function(proj) {
+	projects.projects.forEach(function(proj) {
 		$("#projects").append(HTMLprojectStart);
 		var formattedProjectTitle,
 			formattedProjectDates,
