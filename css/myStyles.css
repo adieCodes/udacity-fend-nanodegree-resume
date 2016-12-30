@@ -13,7 +13,8 @@
   padding: 0.5rem;
 }
 
-#header {
+#header,
+#workExperience {
   padding: 2rem 0;
 }
 
@@ -28,4 +29,17 @@
 span.welcome-message {
   display: inline-block;
   max-width: 40rem;
+}
+
+#workExperience>h2 {
+  text-align: center;
+}
+
+.work-entry {
+  padding-bottom: 1rem;
+}
+
+.work-entry>a {
+  font-size: 1.2rem;
+  line-height: 2rem;
 }
