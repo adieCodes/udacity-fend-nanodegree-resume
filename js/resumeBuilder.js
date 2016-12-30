@@ -2,7 +2,6 @@
 // TODO: Replace profile photo //
 // TODO: Reduce image size //
 // TODO: Test links //
-// TODO: Change name to work.jobs //
 // TODO: Add additional interaction (pins in map?) //
 // TODO: Add Google Maps API key //
 
