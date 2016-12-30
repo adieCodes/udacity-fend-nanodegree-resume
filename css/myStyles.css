@@ -12,3 +12,20 @@
   margin: 1rem auto;
   padding: 0.5rem;
 }
+
+#header {
+  padding: 2rem 0;
+}
+
+#topContacts {
+  padding: 1rem 0;
+}
+
+.biopic {
+  padding: 1rem 2rem;
+}
+
+span.welcome-message {
+  display: inline-block;
+  max-width: 40rem;
+}
