@@ -4,6 +4,7 @@
 // TODO: Test links //
 // TODO: Change name to work.jobs //
 // TODO: Add additional interaction (pins in map?) //
+// TODO: Add Google Maps API key //
 
 var bio = {
 	"name": "Adie Williams",
