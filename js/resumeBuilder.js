@@ -124,7 +124,7 @@ var education = {
 };
 
 var work = {
-	"roles": [{
+	"jobs": [{
 		"employer": "PeoplePlus Ltd",
 		"title": "Telecoms Analyst",
 		"dates": "June 2012 - Present",
@@ -302,7 +302,7 @@ bio.display();
 
 work.display = function() {
 	var i = 0;
-	work.roles.forEach(function(role) {
+	work.jobs.forEach(function(role) {
 		$("#workExperience").append(HTMLworkStart);
 		var formattedEmployer, formattedEmployerTitle, formattedEmployerDates, formattedEmployerLocation, formattedEmployerDescription;
 		if (role.hasOwnProperty('employer')) {
