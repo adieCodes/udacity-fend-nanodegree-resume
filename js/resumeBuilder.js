@@ -439,11 +439,9 @@ education.display = function() {
 				formattedonlineDates = HTMLonlineDates.replace('%data%', course.dates);
 			}
 			if (course.hasOwnProperty('url')) {
-				formattedonlineURL = HTMLonlineURL.replace('%data%', course.url);
-				formattedonlineURL = formattedonlineURL.replace('#', course.url);
 				formattedonlineTitle = formattedonlineTitle.replace('#', course.url);
 			}
-			$('.education-entry:last').append(formattedonlineTitle + formattedonlineSchool, formattedonlineDates, formattedonlineURL);
+			$('.education-entry:last').append(formattedonlineTitle + formattedonlineSchool, formattedonlineDates);
 			if (i > 4) {
 				$(".education-entry:last").addClass('hide');
 			}
