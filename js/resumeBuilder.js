@@ -251,7 +251,8 @@ bio.showContact = function(obj) {
 			formattedgithub = formattedgithub.replace('%data%', bio.contacts.github);
 			contactHTML.push(formattedgithub);
 		} else if (key == 'blog') {
-			var formattedblog = HTMLblog.replace('%data%', bio.contacts.blog);
+			var formattedblog = HTMLblog.replace('%link%', bio.contacts.blog);
+			formattedblog = formattedblog.replace('%data%', bio.contacts.blog);
 			contactHTML.push(formattedblog);
 		} else if (key == 'location') {
 			var formattedlocation = HTMLlocation.replace('%data%', bio.contacts.location);
