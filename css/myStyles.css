@@ -36,7 +36,8 @@
   padding: 1rem 0;
 }
 
-#topContacts a {
+#topContacts a, 
+#footerContacts a {
   color: white;
   margin-top: 0;
   display: inline;

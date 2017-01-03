@@ -264,6 +264,7 @@ bio.showContact = function(obj) {
 			contactHTML.push(formattedcontactGeneric);
 		}
 		$('#topContacts').append(contactHTML);
+		$('#footerContacts').append(contactHTML);
 	});
 };
 
