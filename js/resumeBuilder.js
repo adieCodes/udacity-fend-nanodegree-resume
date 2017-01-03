@@ -11,7 +11,7 @@ var bio = {
 		"mobile": "07525655736",
 		"email": "hello@adie.codes",
 		"github": "adieCodes",
-		"twitter": "@adie.codes",
+		"twitter": "@adie_codes",
 		"location": "Sheffield, UK"
 	},
 	"welcomeMessage": "Front-End Web Developer who uses HTML, CSS and JavaScript to build mobile-first responsive sites. I enjoy working with people to gain a clear understanding of their business, requirements and users; and then use this knowledge to create a focused and enjoyable experience.",
@@ -235,16 +235,20 @@ bio.showContact = function(obj) {
 		var contactHTML = [];
 		// add appropriate formatting
 		if (key == 'mobile') {
-			var formattedmobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
+			var formattedmobile = HTMLmobile.replace('%link%', bio.contacts.mobile);
+			formattedmobile = formattedmobile.replace('%data%', bio.contacts.mobile);
 			contactHTML.push(formattedmobile);
 		} else if (key == 'email') {
-			var formattedemail = HTMLemail.replace('%data%', bio.contacts.email);
+			var formattedemail = HTMLemail.replace('%link%', bio.contacts.email);
+			formattedemail = formattedemail.replace('%data%', bio.contacts.email);
 			contactHTML.push(formattedemail);
 		} else if (key == 'twitter') {
 			var formattedtwitter = HTMLtwitter.replace('%data%', bio.contacts.twitter);
+			formattedtwitter = formattedtwitter.replace('%link%', bio.contacts.twitter);
 			contactHTML.push(formattedtwitter);
 		} else if (key == 'github') {
-			var formattedgithub = HTMLgithub.replace('%data%', bio.contacts.github);
+			var formattedgithub = HTMLgithub.replace('%link%', bio.contacts.github);
+			formattedgithub = formattedgithub.replace('%data%', bio.contacts.github);
 			contactHTML.push(formattedgithub);
 		} else if (key == 'blog') {
 			var formattedblog = HTMLblog.replace('%data%', bio.contacts.blog);

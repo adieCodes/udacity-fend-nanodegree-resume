@@ -36,6 +36,12 @@
   padding: 1rem 0;
 }
 
+#topContacts a {
+  color: white;
+  margin-top: 0;
+  display: inline;
+}
+
 .biopic {
   padding: 1rem 2rem;
 }
