@@ -1,8 +1,7 @@
-// TODO: Add links to contact info //
 // TODO: Replace profile photo //
-// TODO: Test links //
 // TODO: Add additional interaction (pins in map?) //
 // TODO: Add Google Maps API key //
+// TODO: Add urls to jobs and projects //
 
 var bio = {
 	"name": "Adie Williams",
