@@ -1,6 +1,5 @@
 // TODO: Add links to contact info //
 // TODO: Replace profile photo //
-// TODO: Reduce image size //
 // TODO: Test links //
 // TODO: Add additional interaction (pins in map?) //
 // TODO: Add Google Maps API key //
