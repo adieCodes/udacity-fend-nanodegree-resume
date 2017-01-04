@@ -233,36 +233,36 @@ bio.showContact = function(obj) {
 		var contactHTML = [];
 		// add appropriate formatting
 		if (key == 'mobile') {
-			var formattedmobile = HTMLmobile.replace('%link%', bio.contacts.mobile);
-			formattedmobile = formattedmobile.replace('%data%', bio.contacts.mobile);
+			var formattedmobile = HTMLmobile.replace("%link%", bio.contacts.mobile);
+			formattedmobile = formattedmobile.replace("%data%", bio.contacts.mobile);
 			contactHTML.push(formattedmobile);
 		} else if (key == 'email') {
-			var formattedemail = HTMLemail.replace('%link%', bio.contacts.email);
-			formattedemail = formattedemail.replace('%data%', bio.contacts.email);
+			var formattedemail = HTMLemail.replace("%link%", bio.contacts.email);
+			formattedemail = formattedemail.replace("%data%", bio.contacts.email);
 			contactHTML.push(formattedemail);
 		} else if (key == 'twitter') {
-			var formattedtwitter = HTMLtwitter.replace('%data%', bio.contacts.twitter);
-			formattedtwitter = formattedtwitter.replace('%link%', bio.contacts.twitter);
+			var formattedtwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+			formattedtwitter = formattedtwitter.replace("%link%", bio.contacts.twitter);
 			contactHTML.push(formattedtwitter);
 		} else if (key == 'github') {
-			var formattedgithub = HTMLgithub.replace('%link%', bio.contacts.github);
-			formattedgithub = formattedgithub.replace('%data%', bio.contacts.github);
+			var formattedgithub = HTMLgithub.replace("%link%", bio.contacts.github);
+			formattedgithub = formattedgithub.replace("%data%", bio.contacts.github);
 			contactHTML.push(formattedgithub);
 		} else if (key == 'blog') {
-			var formattedblog = HTMLblog.replace('%link%', bio.contacts.blog);
-			formattedblog = formattedblog.replace('%data%', bio.contacts.blog);
+			var formattedblog = HTMLblog.replace("%link%", bio.contacts.blog);
+			formattedblog = formattedblog.replace("%data%", bio.contacts.blog);
 			contactHTML.push(formattedblog);
 		} else if (key == 'location') {
-			var formattedlocation = HTMLlocation.replace('%data%', bio.contacts.location);
+			var formattedlocation = HTMLlocation.replace("%data%", bio.contacts.location);
 			contactHTML.push(formattedlocation);
 		} else {
 			// if no match pass generic formatting
-			var formattedcontactGeneric = HTMLcontactGeneric.replace('%data%', this);
-			formattedcontactGeneric = formattedcontactGeneric.replace('%contact%', key);
+			var formattedcontactGeneric = HTMLcontactGeneric.replace("%data%", this);
+			formattedcontactGeneric = formattedcontactGeneric.replace("%contact%", key);
 			contactHTML.push(formattedcontactGeneric);
 		}
-		$('#topContacts').append(contactHTML);
-		$('#footerContacts').append(contactHTML);
+		$("#topContacts").append(contactHTML);
+		$("#footerContacts").append(contactHTML);
 	});
 };
 
@@ -273,33 +273,33 @@ bio.display = function() {
 	var heroContent = [];
 	var skillsContent = [];
 	if (bio.hasOwnProperty('name')) {
-		var formattedName = HTMLheaderName.replace('%data%', bio.name);
+		var formattedName = HTMLheaderName.replace("%data%", bio.name);
 		headerContent.push(formattedName);
 	}
 	if (bio.hasOwnProperty('role')) {
-		var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
+		var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 		headerContent.push(formattedRole);
 	}
 	if (bio.hasOwnProperty('contacts')) {
 		bio.showContact(bio.contacts);
 	}
 	if (bio.hasOwnProperty('biopic')) {
-		var formattedbioPic = HTMLbioPic.replace('%data%', bio.biopic);
+		var formattedbioPic = HTMLbioPic.replace("%data%", bio.biopic);
 		heroContent.push(formattedbioPic);
 	}
 	if (bio.hasOwnProperty('welcomeMessage')) {
-		var formattedwelcomeMessage = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
+		var formattedwelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 		heroContent.push(formattedwelcomeMessage);
 	}
 	if (bio.hasOwnProperty('skills')) {
-		$('#topContacts').after(HTMLskillsStart);
+		$("#topContacts").after(HTMLskillsStart);
 		bio.skills.forEach(function(prop) {
-			var formattedSkill = HTMLskills.replace('%data%', prop);
-			$('#skills').append(formattedSkill);
+			var formattedSkill = HTMLskills.replace("%data%", prop);
+			$("#skills").append(formattedSkill);
 		});
 	}
-	$('#header').prepend(headerContent);
-	$('#topContacts').after(heroContent);
+	$("#header").prepend(headerContent);
+	$("#topContacts").after(heroContent);
 };
 
 bio.display();
@@ -328,24 +328,24 @@ work.display = function() {
 		}
 		$(".work-entry:last").append(formattedEmployerAndTitle, formattedEmployerDates, formattedEmployerLocation, formattedEmployerDescription);
 		if (i > 4) {
-			$(".work-entry:last").addClass('hide');
+			$(".work-entry:last").addClass("hide");
 		}
 		i++;
 	});
 	// .hide is added if jobs > 4 (line 330), this adds show/hide button
-	if ($(".work-entry:last").hasClass('hide')) {
+	if ($(".work-entry:last").hasClass("hide")) {
 		var workBtn;
 		workBtn = '<button class="btn btn__work">More</button>';
-		$('#workExperience').append(workBtn);
+		$("#workExperience").append(workBtn);
 	}
 	// shows/hides >5 roles when button clicked
 	$(".btn__work").click(function() {
-		if ($(".work-entry").hasClass('unhide')) {
-			$(".work-entry").removeClass('unhide');
-			$('.btn__work').html("More");
+		if ($(".work-entry").hasClass("unhide")) {
+			$(".work-entry").removeClass("unhide");
+			$(".btn__work").html('More');
 		} else {
-			$(".work-entry").addClass('unhide');
-			$('.btn__work').html("Less");
+			$(".work-entry").addClass("unhide");
+			$(".btn__work").html('Less');
 		}
 	});
 };
@@ -378,24 +378,24 @@ projects.display = function() {
 		}
 		$(".project-entry:last").append(formattedProjectTitle, formattedProjectDates, formattedProjectDescription, formattedProjectImages);
 		if (i > 4) {
-			$(".project-entry:last").addClass('hide');
+			$(".project-entry:last").addClass("hide");
 		}
 		i++;
 	});
 	// .hide is added if projects > 4 (line 380), this adds show/hide button
-	if ($(".project-entry:last").hasClass('hide')) {
+	if ($(".project-entry:last").hasClass("hide")) {
 		var educationBtn;
 		educationBtn = '<button class="btn btn__project">More</button>';
-		$('#projects').append(educationBtn);
+		$("#projects").append(educationBtn);
 	}
 	// shows/hides >5 projects when button clicked
 	$(".btn__project").click(function() {
-		if ($(".project-entry").hasClass('unhide')) {
-			$(".project-entry").removeClass('unhide');
-			$('.btn__project').html("More");
+		if ($(".project-entry").hasClass("unhide")) {
+			$(".project-entry").removeClass("unhide");
+			$(".btn__project").html('More');
 		} else {
-			$(".project-entry").addClass('unhide');
-			$('.btn__project').html("Less");
+			$(".project-entry").addClass("unhide");
+			$(".btn__project").html('Less');
 		}
 	});
 };
@@ -403,7 +403,7 @@ projects.display();
 
 education.display = function() {
 	if (education.schools.length > 0) {
-		$('#education').append(HTMLschoolStart);
+		$("#education").append(HTMLschoolStart);
 		education.schools.forEach(function(sch) {
 			var formattedSchoolName,
 				formattedSchoolLocation,
@@ -411,72 +411,72 @@ education.display = function() {
 				formattedSchoolMajor,
 				formattedSchoolDates;
 			if (sch.hasOwnProperty('name')) {
-				formattedSchoolName = HTMLschoolName.replace('%data%', sch.name);
+				formattedSchoolName = HTMLschoolName.replace("%data%", sch.name);
 			}
 			if (sch.hasOwnProperty('location')) {
-				formattedSchoolLocation = HTMLschoolLocation.replace('%data%', sch.location);
+				formattedSchoolLocation = HTMLschoolLocation.replace("%data%", sch.location);
 			}
 			if (sch.hasOwnProperty('degree')) {
-				formattedSchoolDegree = HTMLschoolDegree.replace('%data%', sch.degree);
+				formattedSchoolDegree = HTMLschoolDegree.replace("%data%", sch.degree);
 			}
 			if (sch.hasOwnProperty('majors')) {
-				formattedSchoolMajor = HTMLschoolMajor.replace('%data%', sch.majors);
+				formattedSchoolMajor = HTMLschoolMajor.replace("%data%", sch.majors);
 			}
 			if (sch.hasOwnProperty('dates')) {
-				formattedSchoolDates = HTMLschoolDates.replace('%data%', sch.dates);
+				formattedSchoolDates = HTMLschoolDates.replace("%data%", sch.dates);
 			}
 			if (sch.hasOwnProperty('url')) {
-				formattedSchoolName = formattedSchoolName.replace('#', sch.url);
+				formattedSchoolName = formattedSchoolName.replace("#", sch.url);
 			}
-			$('.education-entry:last').append(formattedSchoolName + formattedSchoolDegree, formattedSchoolDates, formattedSchoolLocation, formattedSchoolMajor);
+			$(".education-entry:last").append(formattedSchoolName + formattedSchoolDegree, formattedSchoolDates, formattedSchoolLocation, formattedSchoolMajor);
 		});
 	}
 	if (education.onlineCourses.length > 0) {
 		// stores number of online course
 		var i = 0;
-		$('#education').append(HTMLonlineClasses);
+		$("#education").append(HTMLonlineClasses);
 		education.onlineCourses.forEach(function(course) {
 			var formattedonlineTitle,
 				formattedonlineSchool,
 				formattedonlineDates,
 				formattedonlineURL;
-			$('#education').append(HTMLschoolStart);
+			$("#education").append(HTMLschoolStart);
 			if (course.hasOwnProperty('title')) {
-				formattedonlineTitle = HTMLonlineTitle.replace('%data%', course.title);
+				formattedonlineTitle = HTMLonlineTitle.replace("%data%", course.title);
 			}
 			if (course.hasOwnProperty('school')) {
-				formattedonlineSchool = HTMLonlineSchool.replace('%data%', course.school);
+				formattedonlineSchool = HTMLonlineSchool.replace("%data%", course.school);
 			}
 			if (course.hasOwnProperty('dates')) {
-				formattedonlineDates = HTMLonlineDates.replace('%data%', course.dates);
+				formattedonlineDates = HTMLonlineDates.replace("%data%", course.dates);
 			}
 			if (course.hasOwnProperty('url')) {
-				formattedonlineTitle = formattedonlineTitle.replace('#', course.url);
+				formattedonlineTitle = formattedonlineTitle.replace("#", course.url);
 			}
-			$('.education-entry:last').append(formattedonlineTitle + formattedonlineSchool, formattedonlineDates);
+			$(".education-entry:last").append(formattedonlineTitle + formattedonlineSchool, formattedonlineDates);
 			if (i > 4) {
-				$(".education-entry:last").addClass('hide');
+				$(".education-entry:last").addClass("hide");
 			}
 			i++;
 		});
 		// .hide is added if projects > 4 (line 457), this adds show/hide button
-		if ($(".education-entry:last").hasClass('hide')) {
+		if ($(".education-entry:last").hasClass("hide")) {
 			var educationBtn;
 			educationBtn = '<button class="btn btn__edu">More</button>';
-			$('#education').append(educationBtn);
+			$("#education").append(educationBtn);
 		}
 		// shows/hides >5 projects when button clicked
 		$(".btn__edu").click(function() {
-			if ($(".education-entry").hasClass('unhide')) {
-				$(".education-entry").removeClass('unhide');
-				$('.btn__edu').html("More");
+			if ($(".education-entry").hasClass("unhide")) {
+				$(".education-entry").removeClass("unhide");
+				$(".btn__edu").html('More');
 			} else {
-				$(".education-entry").addClass('unhide');
-				$('.btn__edu').html("Less");
+				$(".education-entry").addClass("unhide");
+				$(".btn__edu").html('Less');
 			}
 		});
 	}
 };
 education.display();
 
-$('#mapDiv').append(googleMap);
+$("#mapDiv").append(googleMap);
