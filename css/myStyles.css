@@ -25,7 +25,7 @@
 }
 
 .btn:hover {
-  box-shadow: none;
+  box-shadow: 0.05rem 0.05rem 0.05rem #073d4e;
   transition: 0.2s all;
 }
 
