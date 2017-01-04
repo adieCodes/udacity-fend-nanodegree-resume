@@ -1,6 +1,5 @@
 // TODO: Replace profile photo //
 // TODO: Add additional interaction (pins in map?) //
-// TODO: Add Google Maps API key //
 // TODO: Add urls to jobs and projects //
 
 var bio = {
