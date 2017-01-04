@@ -267,22 +267,24 @@ bio.showContact = function(obj) {
 };
 
 bio.display = function() {
+	// Stores all elements to be added to #header
 	var headerContent = [];
+	// Stores all elements to be added to #topContacts
 	var heroContent = [];
 	var skillsContent = [];
 	if (bio.hasOwnProperty('name')) {
-		var formattedName = HTMLheaderName.replace("%data%", bio.name);
+		var formattedName = HTMLheaderName.replace('%data%', bio.name);
 		headerContent.push(formattedName);
 	}
 	if (bio.hasOwnProperty('role')) {
-		var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+		var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
 		headerContent.push(formattedRole);
 	}
 	if (bio.hasOwnProperty('contacts')) {
 		bio.showContact(bio.contacts);
 	}
 	if (bio.hasOwnProperty('biopic')) {
-		var formattedbioPic = HTMLbioPic.replace("%data%", bio.biopic);
+		var formattedbioPic = HTMLbioPic.replace('%data%', bio.biopic);
 		heroContent.push(formattedbioPic);
 	}
 	if (bio.hasOwnProperty('welcomeMessage')) {
@@ -303,6 +305,7 @@ bio.display = function() {
 bio.display();
 
 work.display = function() {
+	// Stores number of jobs
 	var i = 0;
 	work.jobs.forEach(function(role) {
 		$("#workExperience").append(HTMLworkStart);
@@ -329,11 +332,13 @@ work.display = function() {
 		}
 		i++;
 	});
+	// .hide is added if jobs > 4 (line 330), this adds show/hide button
 	if ($(".work-entry:last").hasClass('hide')) {
 		var workBtn;
 		workBtn = '<button class="btn btn__work">More</button>';
 		$('#workExperience').append(workBtn);
 	}
+	// shows/hides >5 roles when button clicked
 	$(".btn__work").click(function() {
 		if ($(".work-entry").hasClass('unhide')) {
 			$(".work-entry").removeClass('unhide');
@@ -347,6 +352,7 @@ work.display = function() {
 work.display();
 
 projects.display = function() {
+	// Stores number of projects
 	var i = 0;
 	projects.projects.forEach(function(proj) {
 		$("#projects").append(HTMLprojectStart);
@@ -376,11 +382,13 @@ projects.display = function() {
 		}
 		i++;
 	});
+	// .hide is added if projects > 4 (line 380), this adds show/hide button
 	if ($(".project-entry:last").hasClass('hide')) {
 		var educationBtn;
 		educationBtn = '<button class="btn btn__project">More</button>';
 		$('#projects').append(educationBtn);
 	}
+	// shows/hides >5 projects when button clicked
 	$(".btn__project").click(function() {
 		if ($(".project-entry").hasClass('unhide')) {
 			$(".project-entry").removeClass('unhide');
@@ -424,6 +432,7 @@ education.display = function() {
 		});
 	}
 	if (education.onlineCourses.length > 0) {
+		// stores number of online course
 		var i = 0;
 		$('#education').append(HTMLonlineClasses);
 		education.onlineCourses.forEach(function(course) {
@@ -450,11 +459,13 @@ education.display = function() {
 			}
 			i++;
 		});
+		// .hide is added if projects > 4 (line 457), this adds show/hide button
 		if ($(".education-entry:last").hasClass('hide')) {
 			var educationBtn;
 			educationBtn = '<button class="btn btn__edu">More</button>';
 			$('#education').append(educationBtn);
 		}
+		// shows/hides >5 projects when button clicked
 		$(".btn__edu").click(function() {
 			if ($(".education-entry").hasClass('unhide')) {
 				$(".education-entry").removeClass('unhide');
