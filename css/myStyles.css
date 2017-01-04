@@ -79,6 +79,7 @@ span.welcome-message {
 .work-entry,
 .project-entry,
 .education-entry {
+  padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
@@ -86,7 +87,16 @@ span.welcome-message {
 .project-entry>a,
 .education-entry>a {
   font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+
+.date-text, 
+.location-text {
   line-height: 2rem;
+}
+
+.work-entry p {
+  margin-top: 0.75rem;
 }
 
 .project-entry img {
