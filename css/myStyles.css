@@ -95,7 +95,8 @@ span.welcome-message {
   line-height: 2rem;
 }
 
-.work-entry p {
+.work-entry p,
+.project-entry p {
   margin-top: 0.75rem;
 }
 
@@ -103,6 +104,11 @@ span.welcome-message {
   max-width: 100%;
   margin: 1rem 0;
   padding: 0;
+}
+
+.education-entry em {
+  display: block;
+  padding-top: 0.75rem;
 }
 
 #mapDiv {
