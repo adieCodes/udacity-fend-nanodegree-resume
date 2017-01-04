@@ -32,11 +32,19 @@
   padding: 2rem 0;
 }
 
-#topContacts {
-  padding: 1rem 0;
+#header {
+  padding: 1rem;
 }
 
-#topContacts a, 
+#header span:not(.welcome-message):not(.orange-text):not(.white-text) {
+  display: block;
+}
+
+#topContacts {
+  display: none;
+}
+
+#topContacts a,
 #footerContacts a {
   color: white;
   margin-top: 0;
@@ -44,12 +52,21 @@
 }
 
 .biopic {
-  padding: 1rem 2rem;
+  padding: 1rem 0;
+  display: block;
+  margin: 0 auto;
+  float: none;
 }
 
 span.welcome-message {
   display: inline-block;
   max-width: 40rem;
+  padding-left: 0;
+}
+
+#skills-h3 {
+  display: block;
+  padding-left: 0;
 }
 
 #workExperience>h2,
@@ -86,5 +103,32 @@ span.welcome-message {
   .project-entry img {
     width: 40%;
     padding: 0 5%;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  #header span:not(.welcome-message):not(.orange-text):not(.white-text) {
+    display: inline;
+    padding-left: 1rem;
+  }
+  #name {
+    padding-left: 1rem;
+  }
+  #topContacts {
+    display: flex;
+    padding: 1rem 0;
+  }
+  #topContacts li {
+    padding: 0.5rem 0;
+  }
+  .biopic {
+    padding-top: 0;
+    margin: 0 1rem;
+    display: inline;
+    float: right;
+  }
+  span.welcome-message {
+    display: inline;
+    padding: 0;
   }
 }
